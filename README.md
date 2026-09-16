@@ -1,2 +1,43 @@
 # drawhime-clone-releases
-DrawHime Clone 本地 AI 生图客户端 · 官方安装包发布（DrawHime-Clone-Setup exe 存储与自动更新源）
+DrawHime Clone 本地 AI 生图客户端 · 官方安装包发布仓库（自动更新源）
+
+## 最新版本：v0.3.7（2026-09-16）
+
+无预置密钥安全版：安装包内不含任何 API Key 与 LoRA 文件。首次启动后请在「设置」中配置 grsai API Base URL 与 API Key。
+
+- 文件：DrawHime-Clone-Setup-0.3.7.exe
+- 大小：171,669,982 字节（约 164 MB）
+- SHA256：`dd0f2cbadd0d94a69299bc30e59e12fb333e03ef953f5fba1849946c6a801bd2`
+
+## 下载与合并（Windows）
+
+GitHub 单文件限制，安装包以 14 个 base64 分卷存储（`DrawHime-Clone-Setup-0.3.7.exe.b64.001` ~ `.014`）。
+
+1. 下载全部 14 个分卷（可用 `https://raw.githubusercontent.com/llm-astr/drawhime-clone-releases/main/` 或 `https://cdn.jsdelivr.net/gh/llm-astr/drawhime-clone-releases@main/` 加文件名，匿名可直接下载）。
+2. 分卷放在同一文件夹，按顺序合并 base64 文本：
+
+   ```
+   copy /b DrawHime-Clone-Setup-0.3.7.exe.b64.001+DrawHime-Clone-Setup-0.3.7.exe.b64.002+DrawHime-Clone-Setup-0.3.7.exe.b64.003+DrawHime-Clone-Setup-0.3.7.exe.b64.004+DrawHime-Clone-Setup-0.3.7.exe.b64.005+DrawHime-Clone-Setup-0.3.7.exe.b64.006+DrawHime-Clone-Setup-0.3.7.exe.b64.007+DrawHime-Clone-Setup-0.3.7.exe.b64.008+DrawHime-Clone-Setup-0.3.7.exe.b64.009+DrawHime-Clone-Setup-0.3.7.exe.b64.010+DrawHime-Clone-Setup-0.3.7.exe.b64.011+DrawHime-Clone-Setup-0.3.7.exe.b64.012+DrawHime-Clone-Setup-0.3.7.exe.b64.013+DrawHime-Clone-Setup-0.3.7.exe.b64.014 setup.b64
+   ```
+
+3. 解码生成安装包：
+
+   ```
+   certutil -decode setup.b64 DrawHime-Clone-Setup-0.3.7.exe
+   ```
+
+4. 校验（可选）：
+
+   ```
+   certutil -hashfile DrawHime-Clone-Setup-0.3.7.exe SHA256
+   ```
+
+   结果应等于 `dd0f2cbadd0d94a69299bc30e59e12fb333e03ef953f5fba1849946c6a801bd2`。
+
+可视化下载站（含分卷直链与图文教程）：https://miaoda.feishu.cn/app/app_17e77c9zdns
+
+## 历史版本
+
+| 版本 | 日期 | 说明 |
+| --- | --- | --- |
+| v0.3.7 | 2026-09-16 | 去密钥安全版，当前推荐 |
